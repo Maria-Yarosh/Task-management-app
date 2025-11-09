@@ -1,0 +1,73 @@
+@use 'variables';
+
+@mixin lg() {
+  @media screen and (max-width: #{variables.$container_size_hg}) {
+      @content;
+  }
+}
+
+@mixin md() {
+  @media screen and (max-width: #{variables.$container_size_lg}) {
+      @content;
+  }
+}
+
+@mixin sm() {
+  @media screen and (max-width: #{variables.$container_size_md}) {
+      @content;
+  }
+}
+
+@mixin tn() {
+  @media screen and (max-width: #{variables.$container_size_sm}) {
+      @content;
+  }
+}
+
+@mixin container($withVerticalPadding: true) {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: variables.$container_horizontal_padding_hg;
+  padding-right: variables.$container_horizontal_padding_hg;
+
+  @if $withVerticalPadding {
+      padding-top: variables.$container_vertical_padding;
+      padding-bottom: variables.$container_vertical_padding;
+  }
+
+  @include lg {
+      padding-left: variables.$container_horizontal_padding_lg;
+      padding-right: variables.$container_horizontal_padding_lg;
+  }
+
+  @include md {
+      padding-left: variables.$container_horizontal_padding_md;
+      padding-right: variables.$container_horizontal_padding_md;
+
+      @if $withVerticalPadding {
+          padding-top: variables.$container_vertical_padding_md;
+          padding-bottom: variables.$container_vertical_padding_md;
+      }
+  }
+
+  @include sm {
+      padding-left: variables.$container_horizontal_padding_sm;
+      padding-right: variables.$container_horizontal_padding_sm;
+
+      @if $withVerticalPadding {
+          padding-top: variables.$container_vertical_padding_sm;
+          padding-bottom: variables.$container_vertical_padding_sm;
+      }
+  }
+
+  @include tn {
+      padding-left: variables.$container_horizontal_padding_tn;
+      padding-right: variables.$container_horizontal_padding_tn;
+
+      @if $withVerticalPadding {
+          padding-top: variables.$container_vertical_padding_tn;
+          padding-bottom: variables.$container_vertical_padding_tn;
+      }
+  }
+}

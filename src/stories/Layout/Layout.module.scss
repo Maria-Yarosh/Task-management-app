@@ -1,0 +1,82 @@
+@use '../../shared/ui/scss/base';
+.layout {
+    @include base.container();
+    padding: 0;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 49px;
+    margin-top: 85px;
+    color: base.$purple-200;
+}
+
+.category {
+    margin-bottom: 20px;
+
+    &_title {
+        display: inline-block;
+        color: base.$default-700-flat;
+        font-weight: 600;
+        letter-spacing: 2.24px;
+        text-transform: uppercase;
+        padding: 12px 20px 12px 0;
+        margin-top: 50px;
+        position: relative;
+
+        &, &::before {
+            background-color: base.$purple-100;
+        }
+
+        &::before {
+            content: '';
+            width: 5000px;
+            height: 100%;
+            position: absolute;
+            right: 100%;
+            top: 0;
+        }
+    }
+
+    &_items {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 40px;
+        margin-top: 30px;
+
+        &_center {
+            align-items: center;
+        }
+
+        &_bottom {
+            align-items: end;
+        }
+
+        &_column {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        &_custom {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+.hint {
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-weight: 500;
+    letter-spacing: 1.54px;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.dark_underlay {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
