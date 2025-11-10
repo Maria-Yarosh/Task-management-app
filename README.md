@@ -71,3 +71,9 @@ export default defineConfig([
   },
 ])
 ```
+
+## Acknowledgements
+
+This project uses components from the "HeroUI (Community) Figma UI Kit 🚀".
+License: CC BY 4.0.
+Original Resource: https://www.figma.com/community/file/1546526812159103429
