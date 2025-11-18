@@ -1,0 +1,255 @@
+@use '../../scss/base';
+
+.chip {
+    display: inline-flex;
+    gap: 6px;
+    padding: 0px 4px;
+    align-items: center;
+}
+
+.size_sm {
+    height: 24px;
+}
+
+.size_md {
+    height: 28px;
+}
+
+.size_lg {
+    height: 32px;
+}
+
+.radius_none {
+    border-radius: 0px;
+}
+
+.radius_sm {
+    border-radius: 8px;
+}
+
+.radius_md {
+    border-radius: 12px;
+}
+
+.radius_lg {
+    border-radius: 14px;
+}
+
+.radius_full {
+    border-radius: 9999px;
+}
+
+.color_default {
+    background-color: base.$default-300-flat;
+    color: base.$black;
+}
+
+.color_primary {
+    background-color: base.$blue-500;
+    color: base.$white;
+}
+
+.color_secondary {
+    background-color: base.$purple-500;
+    color: base.$white;
+}
+
+.color_success {
+    background-color: base.$green-500;
+    color: base.$black;
+}
+
+.color_warning {
+    background-color: base.$yellow-500;
+    color: base.$black;
+}
+
+.color_danger {
+    background-color: base.$red-500;
+    color: base.$white;
+}
+
+.variant_solid {
+    border: 1px solid base.$black;
+}
+
+.variant_bordered {
+    background-color: transparent;
+    border: 2px solid;
+
+    &.color_default {
+        border-color: base.$default-300-flat;
+        color: base.$black;
+    }
+
+    &.color_primary {
+        border-color: base.$blue-500;
+        color: base.$primary-500-flat;
+    }
+
+    &.color_secondary {
+        border-color: base.$purple-500;
+        color: base.$secondary-500-flat;
+    }
+
+    &.color_success {
+        border-color: base.$green-500;
+        color: base.$success-500-flat;
+    }
+
+    &.color_warning {
+        border-color: base.$yellow-500;
+        color: base.$warning-500-flat;
+    }
+
+    &.color_danger {
+        border-color: base.$red-500;
+        color: base.$danger-500-flat;
+    }
+}
+
+.variant_light {
+    background-color: transparent;
+    border: 2px solid transparent;
+
+    &.color_default {
+        color: base.$black;
+    }
+
+    &.color_primary {
+        color: base.$primary-500-flat;
+    }
+
+    &.color_secondary {
+        color: base.$secondary-500-flat;
+    }
+
+    &.color_success {
+        color: base.$success-500-flat;
+    }
+
+    &.color_warning {
+        color: base.$warning-500-flat;
+    }
+
+    &.color_danger {
+        color: base.$danger-500-flat;
+    }
+}
+
+.variant_flat.color_default {
+    background-color: rgba(base.$default-300-flat, 0.4);
+}
+
+.variant_flat.color_primary {
+    background-color: rgba(base.$blue-500, 0.2);
+}
+
+.variant_flat.color_secondary {
+    background-color: rgba(base.$purple-500, 0.2);
+}
+
+.variant_flat.color_success {
+    background-color: rgba(base.$green-500, 0.2);
+}
+
+.variant_flat.color_warning {
+    background-color: rgba(base.$yellow-500, 0.2);
+}
+
+.variant_flat.color_danger {
+    background-color: rgba(base.$red-500, 0.2);
+}
+
+.variant_faded {
+    background-color: base.$zinc-100;
+    border: 2px solid base.$default-300-flat;
+
+    &.color_default {
+        color: base.$default-300-flat;
+    }
+
+    &.color_primary {
+        color: base.$blue-500;
+    }
+
+    &.color_secondary {
+        color: base.$purple-500;
+    }
+
+    &.color_success {
+        color: base.$green-500;
+    }
+
+    &.color_warning {
+        color: base.$yellow-500;
+    }
+
+    &.color_danger {
+        color: base.$red-500;
+    }
+}
+
+.variant_shadow {
+    border: 1px solid base.$black;
+
+    &.color_default {
+        box-shadow: 0 4px 6px -1px rgba(base.$default-300-flat, 0.3);
+    }
+
+    &.color_primary {
+        box-shadow: 0 4px 6px -1px rgba(base.$blue-500, 0.3);
+    }
+
+    &.color_secondary {
+        box-shadow: 0 4px 6px -1px rgba(base.$purple-500, 0.3);
+    }
+
+    &.color_success {
+        box-shadow: 0 4px 6px -1px rgba(base.$green-500, 0.3);
+    }
+
+    &.color_warning {
+        box-shadow: 0 4px 6px -1px rgba(base.$yellow-500, 0.3);
+    }
+
+    &.color_danger {
+        box-shadow: 0 4px 6px -1px rgba(base.$red-500, 0.3);
+    }
+}
+
+.variant_dot {
+    background-color: transparent;
+    border: 2px solid base.$default-300-flat;
+    color: base.$black;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &.color_default {
+        background-color: base.$zinc-400;
+    }
+
+    &.color_primary {
+        background-color: base.$blue-500;
+    }
+
+    &.color_secondary {
+        background-color: base.$purple-500;
+    }
+
+    &.color_success {
+        background-color: base.$green-500;
+    }
+
+    &.color_warning {
+        background-color: base.$yellow-500;
+    }
+
+    &.color_danger {
+        background-color: base.$red-500;
+    }
+}
