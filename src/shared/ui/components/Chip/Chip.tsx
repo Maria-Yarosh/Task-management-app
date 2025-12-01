@@ -48,14 +48,14 @@ export const Chip: FC<IChipProps> = memo((props) => {
 
     const chipClasses = clsx(
         className,
-                style.chip,
+        style.chip,
                 getChipDynamicClasses(variant, color, size, radius),
                 {},
     )
 
     return (
         <div className={chipClasses}>
-            {variant === 'dot' ? <div className={style.dot}></div> : <>{avatar}{startContent}</>}
+            {variant === 'dot' ? <div className={style.variant_dot}></div> : <>{avatar}{startContent}</>}
             {children}
             {endContent}
         </div>
