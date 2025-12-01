@@ -1,0 +1,86 @@
+@use '../../scss/base';
+
+.avatar {
+    display: inline-flex;
+    gap: 6px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.size_sm {
+    width: 32px;
+    height: 32px;
+}
+
+.size_md {
+    width: 40px;
+    height: 40px;
+}
+
+.size_lg {
+    width: 56px;
+    height: 56px;
+}
+
+.radius_none {
+    border-radius: 0px;
+}
+
+.radius_sm {
+    border-radius: 8px;
+}
+
+.radius_md {
+    border-radius: 12px;
+}
+
+.radius_lg {
+    border-radius: 14px;
+}
+
+.radius_full {
+    border-radius: 9999px;
+}
+
+.color_default {
+    background-color: base.$zinc-300;
+    color: base.$black;
+    .text {
+
+    }
+}
+
+.color_primary {
+    background-color: base.$blue-500;
+    color: base.$white;
+}
+
+.color_secondary {
+    background-color: base.$purple-500;
+    color: base.$white;
+}
+
+.color_success {
+    background-color: base.$green-500;
+    color: base.$black;
+}
+
+.color_warning {
+    background-color: base.$yellow-500;
+    color: base.$black;
+}
+
+.color_danger {
+    background-color: base.$red-500;
+    color: base.$white;
+}
+
+.img {
+    border: 2px solid base.$white;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    object-fit: cover;
+    border-radius: inherit;
+}
+
