@@ -1,0 +1,88 @@
+@use '../../scss/base';
+
+.alert {
+    max-width: 342px;
+    min-height: 64px;
+    padding: 1px 5px;
+    overflow: scroll;
+    display: flex;
+    justify-content: space-between;
+}
+
+.full {
+    align-items: baseline;
+}
+
+.compact {
+    align-items: center;
+}
+
+.description_block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    margin: 0;
+}
+
+.description {
+    margin: 0;
+}
+
+.actions_btn_block {
+    display: flex;
+    gap: 10px;
+
+}
+
+.radius_none {
+    border-radius: 0px;
+}
+
+.radius_sm {
+    border-radius: 8px;
+}
+
+.radius_md {
+    border-radius: 12px;
+}
+
+.radius_lg {
+    border-radius: 14px;
+}
+
+.radius_full {
+    border-radius: 9999px;
+}
+
+.color_default {
+    background-color: base.$zinc-100;
+    color: base.$black;
+}
+
+.color_primary {
+    background-color: base.$blue-50;
+    color: base.$blue-500;
+}
+
+.color_secondary {
+    background-color: base.$purple-50;
+    color: base.$purple-500;
+}
+
+.color_success {
+    background-color: base.$green-50;
+    color: base.$green-500;
+}
+
+.color_warning {
+    background-color: base.$yellow-50;
+    color: base.$black;
+}
+
+.color_danger {
+    background-color: base.$red-50;
+    color: base.$white;
+}

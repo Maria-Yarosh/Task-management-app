@@ -1,4 +1,4 @@
-import {memo, type FC, type ReactNode} from 'react';
+import {memo, type FC, type MouseEventHandler, type ReactNode} from 'react';
 import {Button as HButton} from '@headlessui/react'
 import clsx from 'clsx';
 import type {TIconName} from '../Icon/iconsMap';
@@ -26,6 +26,7 @@ interface IButtonProps {
     fullWidth?: boolean;
     className?: string;
     disabled?: boolean;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const getButtonDynamicClasses = (
@@ -57,10 +58,10 @@ export const Button: FC<IButtonProps> = memo((props) => {
         fullWidth,
         className,
         disabled,
+        onClick,
     } = props;
 
     const btnClasses = clsx(
-        className,
         style.btn,
         getButtonDynamicClasses(variant, color, size, radius),
         {
@@ -69,6 +70,7 @@ export const Button: FC<IButtonProps> = memo((props) => {
             [style.full_width]: fullWidth,
             [style.disabled]: disabled,
         },
+        className,
     );
 
     const content = isIconOnly && iconName
@@ -76,7 +78,7 @@ export const Button: FC<IButtonProps> = memo((props) => {
         : <>{startContent}{children}{endContent}</>;
 
     return (
-        <HButton className={btnClasses} disabled={disabled}>
+        <HButton className={btnClasses} disabled={disabled} onClick={onClick}>
             {content}
         </HButton>
     );
