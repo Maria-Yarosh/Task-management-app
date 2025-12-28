@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 import style from './Icon.module.scss';
 
-export type TIconSize = 'sm' | 'md' | 'lg';
+export type TIconSize = 'sm' | 'md' | 'lg' | 'inherit';
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
     name: TIconName;

@@ -1,4 +1,4 @@
-import { memo, useEffect, useState, type FC, type ReactNode } from "react";
+import { memo, useEffect, type FC, type ReactNode } from "react";
 import type { TIconName } from "../Icon/iconsMap";
 import style from "./Alert.module.scss";
 import clsx from "clsx";
@@ -20,6 +20,8 @@ interface IAlertProps {
     autoClose?: number;
     onClickPrimaryAction?: () => void;
     onClickSecondary?: () => void;
+    onClose: () => void;
+    open?: boolean;
 }
 
 const getAlertDynamicClasses = (
@@ -45,18 +47,20 @@ export const Alert: FC<IAlertProps> = memo((props) => {
         autoClose = 10000,
         onClickPrimaryAction,
         onClickSecondary,
+        onClose,
+        open,
     } = props
 
-    const [ visible, setVisible ] = useState(true)
+    //const [ visible, setVisible ] = useState(true)
 
     useEffect(() => {
         if (!showClose) {
-            const timer = setTimeout(() => setVisible(false), autoClose)
+            const timer = setTimeout(() => onClose(), autoClose)
             return () => clearTimeout(timer)
         }
-    }, [showClose, autoClose])
+    }, [showClose, autoClose, onClose])
 
-    if (!visible) return null
+    if (!open) return null
 
     const isFullLayout = iconName && (title || description) && (showClose || showActions)
 
@@ -87,7 +91,7 @@ export const Alert: FC<IAlertProps> = memo((props) => {
 
     const renderClose = ():ReactNode | null => {
         if(!showClose) return null;
-        return <Button variant="ghost" isIconOnly iconName='io-close' onClick={() => setVisible(false)}/>
+        return <Button variant="ghost" isIconOnly iconName='io-close' onClick={() => onClose()}/>
     }
 
     const renderActions = ():ReactNode | null => {

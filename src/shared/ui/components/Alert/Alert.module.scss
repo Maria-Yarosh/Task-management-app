@@ -3,14 +3,15 @@
 .alert {
     max-width: 342px;
     min-height: 64px;
-    padding: 1px 5px;
+    padding: 12px 12px;
     overflow: scroll;
     display: flex;
     justify-content: space-between;
+    gap: 7px;
 }
 
 .full {
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .compact {

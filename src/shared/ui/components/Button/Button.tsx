@@ -79,7 +79,7 @@ export const Button: FC<IButtonProps> = memo((props) => {
 
     return (
         <HButton className={btnClasses} disabled={disabled} onClick={onClick}>
-            {content}
+            {isLoading ? <div className={style.loading}></div> : content}
         </HButton>
     );
 });

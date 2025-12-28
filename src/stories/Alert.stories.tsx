@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Layout, type ILayoutCategory } from "./Layout/Layout";
 import { Alert, type TAlertColor, type TAlertRadius } from "../shared/ui/components/Alert/Alert";
 import type { TIconName } from "../shared/ui/components/Icon/iconsMap";
+import { useState } from "react";
+import { Button } from "../shared/ui/components/Button/Button";
 
 
 interface IAlertProps {
@@ -13,6 +15,7 @@ interface IAlertProps {
     showClose?:boolean;
     showActions?: boolean;
     className?: string;
+
 }
 
 interface IStoryAlertData extends IAlertProps {
@@ -39,7 +42,14 @@ type Story = StoryObj<typeof AlertStories>;
 
 
 const StoryAlert: React.FC<IStoryAlertData> = ({ color, ...rest}) => {
-    return <Alert color={color} {...rest}></Alert>
+    const [open, setOpen] = useState(false)
+
+    return (
+        <>
+          <Button onClick={() => setOpen(true)}>Открыть</Button>
+          <Alert color={color} open={open} onClose={() => setOpen(false)} {...rest}></Alert>
+       </>
+    )
 }
 
 export const Default: Story = {

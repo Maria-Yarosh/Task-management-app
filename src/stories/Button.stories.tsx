@@ -45,8 +45,8 @@ export default meta;
 type Story = StoryObj<typeof ButtonsStories>;
 
 
-const StoryButton: React.FC<IStoryButtonData> = ({hint, size, ...rest}) => {
-    return <Button {...rest}>Button</Button>;
+const StoryButton: React.FC<IStoryButtonData> = (props) => {
+    return <Button {...props}>Button</Button>;
 }
 
 export const Default: Story = {

@@ -1,0 +1,140 @@
+@use '../../scss/base';
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    cursor: text;
+}
+
+.input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.row {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.label {
+    padding-left: 5px;
+}
+
+.required {
+    color: base.$red-500;
+}
+
+// .start_end_content {
+//     width: 20px;
+//     height: 20px;
+// }
+
+.description {
+    color: base.$zinc-500;
+    padding-left: 6px;
+}
+
+.variant_bordered {
+    background-color: transparent;
+    border: 2px solid base.$zinc-700;
+}
+
+.variant_underlined {
+    background-color: transparent;
+    border-bottom: 2px solid base.$zinc-700;
+}
+
+.size_sm {
+    min-height: 46px;
+}
+
+.size_lg {
+    min-height: 66px;
+    font-size: 28px;
+}
+
+.radius_none {
+    border-radius: 0px;
+}
+
+.radius_md:not(.variant_underlined) {
+    border-radius: 12px;
+}
+
+.radius_full:not(.variant_underlined) {
+    border-radius: 9999px;
+}
+
+.color_default {
+    .input:hover {
+        border: 2px solid base.$zinc-500;
+    }
+   .label {
+        color: base.$zinc-300;
+   }
+   .focus {
+    border: 2px solid base.$zinc-700;
+   }
+}
+
+.color_primary {
+    .input:hover {
+        border: 2px solid base.$zinc-500;
+    }
+    .label {
+        color: base.$blue-500;
+   }
+   .focus {
+    border: 2px solid base.$blue-500;
+   }
+}
+
+.color_success {
+    .input:hover {
+        border: 2px solid base.$zinc-500;
+    }
+    .label {
+        color: base.$green-500;
+   }
+   .focus {
+    border-color: base.$green-500;
+   }
+}
+
+.color_warning {
+    .input:hover {
+        border: 2px solid base.$zinc-500;
+    }
+    .label {
+        color: base.$yellow-500;
+    }
+    .focus {
+    border: 2px solid base.$yellow-500;
+   }
+}
+
+.color_danger {
+    .input:hover {
+        border: 2px solid base.$zinc-500;
+    }
+    .label {
+        color: base.$red-500;
+   }
+   .focus {
+    border: 2px solid base.$red-500;
+   }
+}
